@@ -13,4 +13,12 @@ pipeline {
             }
         }
     }
+    }
+    stages{
+        stage('Check PWD'){
+            steps{
+                sh 'pwd'
+            }
+        }
+    }    
 }
