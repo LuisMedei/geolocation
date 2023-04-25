@@ -9,7 +9,7 @@ pipeline {
     stages{
         stage('marvin build'){
             steps{
-                sh mvn clean install package
+                sh 'mvn clean install package'
             }
         }
     }
