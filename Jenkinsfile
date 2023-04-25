@@ -14,6 +14,7 @@ pipeline {
         }
         stage('Upload Artifact to Nexus'){
             steps{
+                script{
                 nexusArtifactUploader artifacts: [[artifactId: '${POM_ARTIFACTID}', 
                 classifier: '', 
                 file: 'target/${POM_ARTIFACTID}-${POM_VERSION}.${POM_PACKAGING}', 
@@ -25,6 +26,7 @@ pipeline {
                 protocol: 'http', 
                 repository: 'maven-nexus-repo', 
                 version: '${POM_VERSION}'
+                }
             }
         }
 
